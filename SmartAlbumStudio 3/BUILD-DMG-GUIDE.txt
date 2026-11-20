@@ -1,0 +1,29 @@
+# SmartAlbum Studio — DMG build package
+
+This project ZIP contains the Stage 1 application files plus a GitHub Actions workflow
+that attempts to build an Intel macOS DMG on a hosted Intel Mac runner.
+
+## Build the DMG using GitHub (no terminal commands)
+
+1. Sign in to GitHub and create a **new private repository** named `SmartAlbumStudio`.
+2. On your computer, extract this ZIP.
+3. Open the new repository on GitHub and choose **Add file → Upload files**.
+4. Upload the contents of the `SmartAlbumStudio` folder, including the hidden `.github` folder.
+   The `.github/workflows/build-macos-dmg.yml` file is essential.
+5. Commit the uploaded files to the `main` branch.
+6. Open the repository's **Actions** tab.
+7. Choose **Build SmartAlbum Studio Intel DMG** on the left.
+8. Click **Run workflow** and confirm **Run workflow**.
+9. When the run finishes successfully, open it and download the artifact named
+   `SmartAlbum-Studio-Intel-DMG`. It contains the `.dmg`.
+
+## Important notes
+
+- This builds an **Intel x64 DMG**, intended for Intel Macs.
+- The app is not code-signed or notarized. macOS may warn when opening it.
+- This workflow does not make the app complete beyond the features implemented in Stage 1.
+  The canvas editor, automatic album builder, project saving, and export stages still need
+  to be developed before this is a full-featured album product.
+- GitHub's hosted runner availability and repository Actions limits may affect the build.
+- If GitHub does not accept the hidden `.github` folder through browser upload, use GitHub
+  Desktop to add and publish the extracted project folder.
